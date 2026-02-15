@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>floating love bubble</title>
+   <style>body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;}
+/* Body background image (KEEP THIS) */
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: hotpink;
+  background-image: url("https://marketplace.canva.com/EAF8Rl0C_5s/2/0/1600w/canva-pink-illustrative-valentine%27s-day-desktop-wallpaper-X5EmStxfRtM.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+    background-color: #fff0f5 !important;
+    filter: none !important;}
+    body::before {
+    display: none !important;
+    text-align: center;
+}
+h1 {
+            margin-top: 80px;
+        }
+body::before {
+    display: none !important;
+}
+  .love {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .love span {
+      position: absolute;
+      bottom: 0;
+      font-size: 30px;
+      animation: float 5s infinite linear;
+    }
+
+    .love span:nth-child(1) { left: 20%; }
+    .love span:nth-child(2) { left: 50%; animation-duration: 6s; }
+    .love span:nth-child(3) { left: 80%; animation-duration: 7s; }
+
+    @keyframes float {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+   
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff6a88, #ff99ac);
+  height: 100vh;
+}
+
+/* Dark background overlay */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center card */
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background: #ffc0cb;
+  padding: 15px 18px;
+width: 400px;       
+  max-width: 90%;
+max-height: 85vh; 
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+overflow-y: auto;
+  transition: 0.4s ease;   /* needed for smooth fade */
+  z-index: 10;     
+}
+.card img {
+ width: 40%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 20px;
+}
+.card h2 {
+  font-size: 17px;
+  margin: 3px 0;
+}
+
+.card p {
+  font-size: 12px;
+  margin: 3px 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;  /* important for small screens */
+}
+.image-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;   /* Important for small height */
+}
+
+.photo-section{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:12px 0;
+  flex-wrap: wrap;
+}
+
+.photo-section img{
+  width:120px;       /* Increased size */
+  height:auto;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+.photo-row{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.photo-row img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 12px;
+
+}
+.photo-section img:hover{
+  transform:scale(1.05);
+}
+
+/* Button Section */
+.button-section{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+ margin-top: 10px; 
+}
+
+
+button {
+  padding: 8px 18px;
+  font-size:13px;
+  border: none;
+  border-radius: 20px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button:hover{
+  transform:scale(1.05);
+}
+.button-section button{
+  padding:12px 35px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:#ff6b81;
+  color:white;
+  cursor:pointer;}
+
+/* POP ANIMATION 🎉 */
+@keyframes pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.split-half {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff6b81;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 25px;
+  pointer-events: none;
+}
+
+/* Left half */
+ .left-half {
+  clip-path: inset(0 50% 0 0);
+}
+
+/* Right half */
+.right-half {
+  clip-path: inset(0 0 0 50%);
+}
+
+/* Animation */
+.move-left {
+  animation: moveLeft 0.6s forwards;
+}
+
+.move-right {
+  animation: moveRight 0.6s forwards;
+}
+@keyframes moveLeft {
+  to {
+    transform: translateX(-100px) rotate(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes moveRight {
+  to {
+    transform: translateX(100px) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* Crack animation */
+#card{
+  background:#ffb6c1;
+  padding:40px;
+  width:400px;
+  margin:auto;
+  border-radius:15px;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade effect */
+.fade-out{
+  opacity:0;
+  transform:scale(0.8);}
+  button{
+  padding:10px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:20px;
+  background:#ff6b81;
+  color:white;
+  cursor:pointer;
+  margin-top:20px;
+}
+.overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            z-index: 1;
+        }
+.card.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%,-50%)scale(1);}
+    .no-wrapper {
+  position: relative;
+  display: inline-block;
+}        
+#noBtn {
+  position: relative;
+  padding: 12px 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: #ff6b81;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Create two fake halves */
+#noBtn::before,
+#noBtn::after {
+content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff6b81;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.6s ease; 
+}
+
+/* Left half */
+#noBtn::before {
+  clip-path: inset(0 );
+}
+
+/* Right half */
+#noBtn::after {
+  clip-path: inset(0 0 0 50%);
+}
+
+/* When cracked */
+#noBtn.crack {
+  color: transparent;
+}
+
+#noBtn.crack::before {
+  transform: translateX(-90px) rotate(-15deg);
+  opacity: 0;
+}
+
+#noBtn.crack::after {
+  transform: translateX(90px) rotate(15deg);
+  opacity: 0;
+}
+.main {
+  display: none; /* hidden first */
+  text-align: center;
+  margin-top: 100px;
+}
+.content{
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  
+}
+.content img {
+  width: 250px;
+  border: 10px solid white;
+  
+}
+.content p{
+ width: 40;
+ font-size: 18px;
+}
+.text{
+  max-width: 550px;
+  font-size: 15px;
+}
+
+</style>
+
+
+
+
+    
+
+
+
+
+
+
+ 
+
+
+  
+   
+      
+
+   </style>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+ 
+   <div id="mainPage" class="main">
+  <h3>You are The Prince of My Dreams</h3>
+   </div>
+  
+  <h2 style="text-align: center;"><i><u>🧿❤️Dear Debangan❤️🧿 </u></i></h2>
+  <p><b></b></p>
+  </div>
+     <div class="love-border">
+    <div class="love-border">
+  <span class="left">❤️ 💗 💕 💖 💘</span>
+  <span class="right">❤️ 💗 💕 💖 💘</span>
+  <div style="display: flex; align-items: flex-start; gap: 20px;">
+    <div class="content">
+  <img src="https://i.pinimg.com/736x/84/cb/00/84cb00567be8f10719054bd05d75bbce.jpg"width="200"style= "transform:rotate(90deg);border: 10px solid white margin-left: 10%;"alt="human image">
+  <div class="text">
+  <p><b>I love U Nimkee.Every single Day with you feels special....A real rose may not fresh for long,but I think this rose will always stay beautiful.I dont want the rose I give you to ever dry up. </b> </p><br>
+  <p><b>I wanted to surprise you with this on Valentines Day,but I could not give it to you that day,I am sorry for that</b></p><br>
+  </div>
+  </div>
+  </div>
+  <div class="moveimage">
+ <div style="display: flex; align-items: flex-start; gap: 130px;">
+   <p style="width: 400px"; font-size=" 30px;">
+   <b> I know you have already eaten all the chocolates in your "nom nom nom" way,so i gave you these too..go ahead and eat these as well..HEHEHE... </b>
+  </p>
+  <img src="https://wallpapers.com/images/featured/chocolate-pictures-xi2obvjhhzbk3v4a.jpg"width="200" style="border: 10px solid palevioletred;" class="move image"alt="human image">
+  </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 30px;">
+  <img src="https://i.pinimg.com/736x/42/82/e0/4282e0979eea285533ede90ccde04913.jpg" width="200" style="border: 10px solid palevioletred;" alt="love">
+  <p style="font-size: 15px; width: 400px;">
+   
+
+<b>আমাদের বন্ধুত্ব ক্লাস ১১ থেকে… ❤️ আর ২০২৬ সালে এটা আমাদের প্রথম ভ্যালেন্টাইনস ডে 💖 তাই তোকে একটা কথা বলতে চাই… 💕
+
+দেখ, আমি তোকে সবসময় খুব ভালোবাসি 💗 তুই যেমন আছিস 🌸✨ আমার কাছে তুই ভীষণ দামী🥺🫂 💞 সবসময় আমার পাশে থাকিস 💘 এটাই আমার গিফট হিসেবে একমাত্র চাওয়া ❤️✨..</b>
+
+
+
+
+  </p>
+</div>
+  <div class="love">
+  <span>❤️</span>
+  <span>💖</span>
+  <span>💕</span>
+   <span>❤️</span>
+  <span>💖</span>
+  <span>💕</span>
+  <span>💗</span>
+  <span>💘</span>
+  <span>❤️</span>
+  <span>💖</span>
+</div>
+
+  <div id="card" class="card">
+    <h2>Amar Deba...🎉</h2>
+    <P><b>God blessed me by gifting you</b></P>
+    <p style="color:firebrick"><b>Deba will u be my bestfriend forever?</b></p>
+    <div class="photo-section">
+    <img src="images/myphoto.jpg" alt="My Photo">
+    <img src="images/myphoto2.jpg" alt="My Photo">
+    </div>
+     <div class="button-section">
+    <button type="button" onclick="hideCard()">Yes</button>
+    <div class="no-wrapper">
+    <button id="noBtn" type="button">No</button>
+    </div>
+    </div>
+    <p><b>Maybe i get angry with you a lot but i cant live without you i am tottaly obssed with you Deba.</b></p>
+</div>
+    
+    
+ <script>
+      
+function closePopup() {
+   document.querySelector(".popup").style.display = "none";
+}
+
+/* YES BUTTON - FADE CARD */
+function hideCard(){
+  let card = document.getElementById("card");
+
+  card.style.transition = "opacity 1s ease";
+  card.style.opacity = "0";
+
+  setTimeout(function(){
+    card.style.display = "none";
+  },1000);
+}
+function crackButton() {
+  let btn = document.getElementById("noBtn");
+
+  let rect = btn.getBoundingClientRect();
+
+  let left = document.createElement("div");
+  left.innerText = "No";
+  left.className = "half left";
+
+  let right = document.createElement("div");
+  right.innerText = "No";
+  right.className = "half right";
+
+  left.style.position = "absolute";
+  right.style.position = "absolute";
+   left.style.left = rect.left + "px";
+  right.style.left = rect.left + "px";
+  left.style.top = rect.top + "px";
+  right.style.top = rect.top + "px";
+
+  left.style.width = rect.width + "px";
+  right.style.width = rect.width + "px";
+  left.style.height = rect.height + "px";
+  right.style.height = rect.height + "px";
+
+  document.body.appendChild(left);
+  document.body.appendChild(right);
+
+  btn.style.visibility = "hidden";
+
+  setTimeout(() => {
+    left.classList.add("moveLeft");
+    right.classList.add("moveRight");
+   }, 10);
+}
+
+
+const noBtn = document.getElementById("noBtn");
+
+// store button text into data attribute
+noBtn.setAttribute("data-text", noBtn.innerText);
+
+noBtn.addEventListener("click", function() {
+  this.classList.add("crack");
+});
+
+document.getElementById("noBtn").addEventListener("click", function() {
+
+  const wrapper = document.querySelector(".no-wrapper");
+  const btn = this;
+
+  // Create left half
+  const left = document.createElement("div");
+  left.className = "split-half left-half";
+  left.innerText = btn.innerText;
+
+  // Create right half
+  const right = document.createElement("div");
+  right.className = "split-half right-half";
+  right.innerText = btn.innerText;
+
+  wrapper.appendChild(left);
+  wrapper.appendChild(right);
+
+  // Hide original button
+  btn.style.visibility = "hidden";
+
+  // Animate
+  setTimeout(() => {
+    left.classList.add("move-left");
+    right.classList.add("move-right");
+  }, 10);
+
+});
+
+function closeCard() {
+  const card = document.getElementById("card");
+  const main = document.getElementById("mainPage");
+
+  // Fade out card
+  card.style.opacity = "0";
+  card.style.transform = "translate(-50%, -50%) scale(0.8)";
+
+  setTimeout(() => {
+    card.style.display = "none";
+    main.style.display = "block";
+  }, 600);
+}
+
+  
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+   
+</div>
+  </div>
+
+</body>
+</html>
